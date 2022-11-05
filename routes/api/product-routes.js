@@ -110,6 +110,7 @@ router.delete('/:id', (req, res) => {
     if(destroyedProduct === 0){
       res.status(404).json({msg:"The supplied Product was not found.", err})
     }
+    res.json(destroyedProduct);
   }).catch((err) => {
     res.status(500).json({msg:"There was an error deleting the Product data.", err})
   })
