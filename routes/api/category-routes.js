@@ -67,6 +67,7 @@ router.delete('/:id', (req, res) => {
     if(destroyedCategory === 0){
       res.status(404).json({msg:"The supplied category was not found.", err})
     }
+    res.json(destroyedCategory);
   }).catch((err) => {
     res.status(500).json({msg:"There was an error deleting the category data.", err})
   })
